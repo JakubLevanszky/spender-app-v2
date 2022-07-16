@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ItemsForm from './ItemsForm';
-import Item from './Item';
+import ItemsForm from '../ItemsForm/ItemsForm';
+import Item from '../Item/Item';
 import { Container } from '../../features/ui/components/Container/Container.styled';
 
 function ItemsList() {
