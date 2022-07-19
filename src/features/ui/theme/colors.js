@@ -1,8 +1,8 @@
-import { palette, pallete } from './palette';
+import { palette } from './palette';
 
 export const colors = {
   text: {
     light: palette.grey[700],
-    dark: pallete.grey[100]
+    dark: palette.grey[100]
   }
 };
