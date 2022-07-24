@@ -1,15 +1,14 @@
 import React from 'react';
-import './App.css';
-import ItemsList from './components/ItemsList/ItemsList';
-import Header from './features/ui/components/Header/Header';
-import Input from './features/ui/components/Input/Input';
+// import ItemsList from './components/ItemsList/ItemsList';
+import Layout from './features/ui/components/Layout/Layout';
+import { GlobalStyle } from './features/ui/theme/global';
 
 const App = () => {
   return (
     <>
-      <Header />
-      <ItemsList />
-      <Input palceholder="test" name="test2" type="text" />
+      <GlobalStyle />
+      <Layout />
+      {/* <ItemsList /> */}
     </>
   );
 };
