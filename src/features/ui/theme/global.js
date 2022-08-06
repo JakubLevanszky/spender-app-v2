@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { palette } from './palette';
 
 export const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -9,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 html, body {
   padding: 0;
   height: 100%;
+  background-color: ${palette.background2}
 }
 
 html {

@@ -1,10 +1,9 @@
-export const pallete = {
-  background: '#EFEEEA',
-  background2: '#9bc7c5',
-  cat1: '#fed45b',
-  cat2: '#e86a58',
-  cat3: '#1bb28c',
-  cat4: '#23362B',
+export const palette = {
+  background: '#FEFBF6',
+  background2: '#F2F3F7',
+  cat1: '#06A0F6',
+  cat2: '#24CA49',
+  cat3: '#FF8743',
 
   // shades of grey
   grey: {
