@@ -1,9 +1,14 @@
+import Card from '../../../../../../components/Card/Card';
 import { SummarySection } from './Summary.styled';
 
 function Summary() {
   return (
     <>
-      <SummarySection>SummarySection</SummarySection>
+      <SummarySection>
+        <Card />
+        <Card />
+        <Card />
+      </SummarySection>
     </>
   );
 }

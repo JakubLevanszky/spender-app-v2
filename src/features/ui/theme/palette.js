@@ -1,5 +1,6 @@
 export const palette = {
-  background: '#FEFBF6',
+  background: '#FFF',
+  // background: '#FEFBF6',
   background2: '#F2F3F7',
   cat1: '#06A0F6',
   cat2: '#24CA49',
