@@ -5,7 +5,6 @@ function Spends() {
   return (
     <>
       <SpendsSection>
-        SpendsSection
         <ItemsList />
       </SpendsSection>
     </>

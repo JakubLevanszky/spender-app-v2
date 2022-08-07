@@ -4,6 +4,7 @@ import { palette } from '../../../../theme/palette';
 export const SpendsSection = styled.section`
   background-color: ${palette.background};
   border-radius: 16px;
+  padding: 20px;
   overflow: auto;
   max-height: 480px;
   box-shadow: 0px 100px 80px rgba(181, 178, 178, 0.07),

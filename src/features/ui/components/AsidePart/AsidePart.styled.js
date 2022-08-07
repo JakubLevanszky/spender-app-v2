@@ -5,6 +5,7 @@ export const StyledAside = styled.aside`
   display: grid;
   justify-content: center;
   justify-items: center;
+  padding: 20px;
   border-radius: 12px;
   height: 700px;
   background-color: ${palette.background};

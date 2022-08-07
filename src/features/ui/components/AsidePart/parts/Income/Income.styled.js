@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const IncomeStyled = styled.section`
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
 export const InputParams = styled.div`
