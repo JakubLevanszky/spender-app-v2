@@ -1,6 +1,6 @@
 // import Header from '../Header/Header';
 import Spends from './parts/Spends/Spends';
-import Summary from './parts/Summary/Summary';
+// import Summary from './parts/Summary/Summary';
 import { MainPartStyled } from './MainPart.styled';
 
 function MainPart() {
@@ -8,7 +8,7 @@ function MainPart() {
     <>
       <MainPartStyled>
         <Spends />
-        <Summary />
+        {/* <Summary /> */}
       </MainPartStyled>
     </>
   );

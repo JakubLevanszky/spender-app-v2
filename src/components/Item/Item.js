@@ -23,7 +23,7 @@ function Item({ items, completeItem, removeItem, editItem }) {
   }
 
   return items.map((item, i) => (
-    <div className={item.isComplete ? 'item-row complete' : 'item-row'} key={i}>
+    <div key={i}>
       <div key={item.id} onClick={() => completeItem(item.id)}>
         {item.text}
       </div>

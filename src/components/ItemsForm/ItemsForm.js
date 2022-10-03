@@ -29,7 +29,7 @@ function ItemsForm(props) {
   };
 
   return (
-    <form className="items-form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       {props.edit ? (
         <>
           <input
@@ -41,7 +41,7 @@ function ItemsForm(props) {
             onChange={handleChange}
             ref={inputRef}
           />
-          <GiConfirmed className="add" onClick={handleSubmit} />
+          <GiConfirmed onClick={handleSubmit} />
         </>
       ) : (
         <>
@@ -50,11 +50,10 @@ function ItemsForm(props) {
             placeholder="Add an item"
             value={input}
             name="text"
-            className="item-input"
             onChange={handleChange}
             ref={inputRef}
           />
-          <BsPlusCircle className="confirm" onClick={handleSubmit} />
+          <BsPlusCircle onClick={handleSubmit} />
         </>
       )}
     </form>
