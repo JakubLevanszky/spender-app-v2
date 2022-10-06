@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 html, body {
   padding: 0;
   height: 100%;
-  background-color: ${palette.background2}
+  background-color: ${palette.background}
 }
 
 html {
