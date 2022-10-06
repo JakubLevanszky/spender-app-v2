@@ -1,15 +1,13 @@
-import AsidePart from '../AsidePart/AsidePart';
 import { LayoutStyled } from './Layout.styled';
-import MainPart from '../MainPart/MainPart';
 import Header from '../Header/Header';
+import ItemsList from '../../../../components/ItemsList/ItemsList';
 
 function Layout() {
   return (
     <>
       <Header />
       <LayoutStyled>
-        <MainPart />
-        <AsidePart />
+        <ItemsList />
       </LayoutStyled>
     </>
   );
