@@ -3,6 +3,8 @@ import Header from '../Header/Header';
 import ItemsList from '../../../../components/ItemsList/ItemsList';
 import Income from '../../../../components/Income/Income';
 import { Container } from '../Container/Container.styled';
+import Spending from '../../../../components/Spending/Spending';
+import Balance from '../../../../components/Balance/Balance';
 
 function Layout() {
   return (
@@ -11,6 +13,8 @@ function Layout() {
       <LayoutStyled>
         <Container>
           <Income />
+          <Balance />
+          <Spending />
           <ItemsList />
         </Container>
       </LayoutStyled>
