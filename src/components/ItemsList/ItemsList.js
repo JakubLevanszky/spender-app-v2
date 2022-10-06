@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ItemsForm from '../ItemsForm/ItemsForm';
 import Item from '../Item/Item';
-import { Container } from '../../features/ui/components/Container/Container.styled';
 
 function ItemsList() {
   const [items, setItems] = useState([]);
@@ -41,11 +40,11 @@ function ItemsList() {
   };
 
   return (
-    <Container>
+    <>
       <h1>List</h1>
       <ItemsForm onSubmit={addItem} />
       <Item items={items} completeItem={completeItem} removeItem={removeItem} editItem={editItem} />
-    </Container>
+    </>
   );
 }
 
