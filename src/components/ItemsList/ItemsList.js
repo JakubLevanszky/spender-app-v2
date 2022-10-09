@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ItemsForm from '../ItemsForm/ItemsForm';
 import Item from '../Item/Item';
 
-function ItemsList() {
+export default function ItemsList() {
   const [items, setItems] = useState([]);
 
   const addItem = (item) => {
@@ -15,13 +15,13 @@ function ItemsList() {
     setItems(newItems);
   };
 
-  const editItem = (itemId, newValue) => {
-    if (!newValue.text || /^\s*$/.test(newValue.text)) {
-      return;
-    }
+  // const editItem = (itemId, newValue) => {
+  //   if (!newValue.text || /^\s*$/.test(newValue.text)) {
+  //     return;
+  //   }
 
-    setItems((prev) => prev.map((i) => (i.id === itemId ? newValue : i)));
-  };
+  //   setItems((prev) => prev.map((i) => (i.id === itemId ? newValue : i)));
+  // };
 
   const removeItem = (id) => {
     const removeArr = [...items].filter((item) => item.id !== id);
@@ -29,23 +29,22 @@ function ItemsList() {
     setItems(removeArr);
   };
 
-  const completeItem = (id) => {
-    let updatedItems = items.map((item) => {
-      if (item.id === id) {
-        item.isComplete = !item.isComplete;
-      }
-      return item;
-    });
-    setItems(updatedItems);
-  };
+  // const completeItem = (id) => {
+  //   let updatedItems = items.map((item) => {
+  //     if (item.id === id) {
+  //       item.isComplete = !item.isComplete;
+  //     }
+  //     return item;
+  //   });
+  //   setItems(updatedItems);
+  // };
 
   return (
     <>
       <h1>List</h1>
       <ItemsForm onSubmit={addItem} />
-      <Item items={items} completeItem={completeItem} removeItem={removeItem} editItem={editItem} />
+      <Item items={items} removeItem={removeItem} />
+      {/* editItem={editItem} completeItem={completeItem} */}
     </>
   );
 }
-
-export default ItemsList;

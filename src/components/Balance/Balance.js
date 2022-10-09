@@ -1,11 +1,9 @@
 import React from 'react';
 
-function Balance() {
+export default function Balance() {
   return (
     <>
       <h2>Balance: </h2>
     </>
   );
 }
-
-export default Balance;

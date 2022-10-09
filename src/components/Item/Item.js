@@ -1,26 +1,28 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import ItemsForm from '../ItemsForm/ItemsForm';
+// import ItemsForm from '../ItemsForm/ItemsForm';
 import { RiCloseCircleLine } from 'react-icons/ri';
-import { TiEdit } from 'react-icons/ti';
+// import { TiEdit } from 'react-icons/ti';
 
-function Item({ items, completeItem, removeItem, editItem }) {
+export default function Item({ items, completeItem, removeItem }) {
+  // editItem
   const [edit, setEdit] = useState({
     id: null,
     value: ''
   });
 
-  const submitUpdate = (value) => {
-    editItem(edit.id, value);
-    setEdit({
-      id: null,
-      value: ''
-    });
-  };
+  // const submitUpdate = (value) => {
+  //   editItem(edit.id, value);
+  //   setEdit({
+  //     id: null,
+  //     value: ''
+  //   });
+  // };
 
-  if (edit.id) {
-    return <ItemsForm edit={edit} onSubmit={submitUpdate} />;
-  }
+  // if (edit.id) {
+  //   return <ItemsForm edit={edit} onSubmit={submitUpdate} />;
+  // }
 
   return items.map((item, i) => (
     <div key={i}>
@@ -29,10 +31,8 @@ function Item({ items, completeItem, removeItem, editItem }) {
       </div>
       <div className="icons">
         <RiCloseCircleLine onClick={() => removeItem(item.id)} className="delete-icon" />
-        <TiEdit onClick={() => setEdit({ id: item.id, value: item.text })} className="edit-icon" />
+        {/* <TiEdit onClick={() => setEdit({ id: item.id, value: item.text })} className="edit-icon" /> */}
       </div>
     </div>
   ));
 }
-
-export default Item;

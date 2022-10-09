@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 
-function Income() {
+export default function Income(props) {
   const [editing, setEditing] = useState(false);
 
   const toggleEdit = () => {
@@ -9,18 +10,18 @@ function Income() {
 
   return (
     <>
-      <h1>Income</h1>
       <div>
         {editing ? (
           <>
-            <input type="number" />
+            <input type="number" defaultValue={props.budget} />
             <button onClick={toggleEdit} type="button">
               Save
             </button>
+            {/* have a function what will be passed to Layout component to calculate / handle budget */}
           </>
         ) : (
           <>
-            <span>Budget: </span>
+            <span>Income: </span>
             <button onClick={toggleEdit} type="button">
               Edit
             </button>
@@ -30,5 +31,3 @@ function Income() {
     </>
   );
 }
-
-export default Income;

@@ -1,7 +1,7 @@
 import { StyledHeader } from './Header.styled';
 import { GrMoney } from 'react-icons/gr';
 
-function Header() {
+export default function Header() {
   return (
     <>
       <StyledHeader>
@@ -12,5 +12,3 @@ function Header() {
     </>
   );
 }
-
-export default Header;
