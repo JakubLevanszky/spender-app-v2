@@ -11,6 +11,7 @@ import Balance from '../../../../components/Balance/Balance';
 export default function AppWrapper() {
   const [income, setIncome] = useState(1000);
   const [items, setItems] = useState([]);
+  const [balance, setBalance] = useState(income);
 
   const incomeUpdate = (newIncome) => {
     setIncome(newIncome);
@@ -21,6 +22,16 @@ export default function AppWrapper() {
     setItems(newItems);
     localStorage.setItem('items', JSON.stringify(newItems));
   };
+
+  // const balanceUpdate = () => {
+  //   let newBalance = income - items.cost;
+  // };
+
+  const balanceUpdate = items.reduce((balance, item) => {
+    console.log('balance:' + balance);
+    console.log('item ' + Number(item.cost));
+    return (balance += Number(item.cost));
+  }, 0);
 
   // get rid off useEffect and use function instead
   useEffect(() => {
@@ -40,7 +51,7 @@ export default function AppWrapper() {
       <AppWrapperStyled>
         <Container>
           <Income income={income} onIncomeUpdate={incomeUpdate} />
-          <Balance />
+          <Balance balance={balanceUpdate} income={income} />
           <Spending />
           <ItemsList items={items} onItemsUpdate={onItemsUpdate} />
         </Container>
