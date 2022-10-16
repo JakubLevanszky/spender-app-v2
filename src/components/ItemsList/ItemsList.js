@@ -1,50 +1,28 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
 import ItemsForm from '../ItemsForm/ItemsForm';
 import Item from '../Item/Item';
 
-export default function ItemsList() {
-  const [items, setItems] = useState([]);
-
+export default function ItemsList(props) {
   const addItem = (item) => {
-    if (!item.text || /^\s*$/.test(item.text)) {
-      return;
-    }
+    const newItems = [item, ...props.items];
 
-    const newItems = [item, ...items];
-
-    setItems(newItems);
+    props.onItemsUpdate(newItems);
   };
-
-  // const editItem = (itemId, newValue) => {
-  //   if (!newValue.text || /^\s*$/.test(newValue.text)) {
-  //     return;
-  //   }
-
-  //   setItems((prev) => prev.map((i) => (i.id === itemId ? newValue : i)));
-  // };
 
   const removeItem = (id) => {
-    const removeArr = [...items].filter((item) => item.id !== id);
+    const removeArr = [...props.items].filter((item) => item.id !== id);
 
-    setItems(removeArr);
+    props.onItemsUpdate(removeArr);
   };
-
-  // const completeItem = (id) => {
-  //   let updatedItems = items.map((item) => {
-  //     if (item.id === id) {
-  //       item.isComplete = !item.isComplete;
-  //     }
-  //     return item;
-  //   });
-  //   setItems(updatedItems);
-  // };
 
   return (
     <>
       <h1>List</h1>
       <ItemsForm onSubmit={addItem} />
-      <Item items={items} removeItem={removeItem} />
+      <Item items={props.items} removeItem={removeItem} />
       {/* editItem={editItem} completeItem={completeItem} */}
+      {/* <button onClick={handleClick}>test</button> */}
     </>
   );
 }

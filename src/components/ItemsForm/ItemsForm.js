@@ -6,8 +6,7 @@ import { BsPlusCircle } from 'react-icons/bs';
 // import { GiConfirmed } from 'react-icons/gi';
 
 export default function ItemsForm(props) {
-  const [itemName, setItemName] = useState('');
-  const [itemCost, setItemCost] = useState('');
+  const [itemsFormData, setItemsFormData] = useState({ name: '', cost: '' });
 
   // const inputRef = useRef(null);
 
@@ -15,23 +14,27 @@ export default function ItemsForm(props) {
   //   inputRef.current.focus();
   // });
 
-  const handleChange = (e) => {
-    setItemName(e.target.value);
-    setItemCost(e.target.value);
+  const handleChange2 = (e) => {
+    const { name, value, type } = e.target;
+    setItemsFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [e.target.name]: e.target.value,
+        id: Math.floor(Math.random() * 10000)
+      };
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    props.onSubmit({
-      id: Math.floor(Math.random() * 10000),
-      name: itemName,
-      cost: itemCost
-    });
-
-    setItemName('');
-    setItemCost('');
+    props.onSubmit(itemsFormData);
+    setItemsFormData({ name: '', cost: '' });
   };
+
+  // const handleChange = (e) => {
+  //   setItemName(e.target.value);
+  //   setItemCost(e.target.value);
+  // };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -62,18 +65,16 @@ export default function ItemsForm(props) {
         <input
           type="text"
           placeholder="Add an item"
-          value={itemName}
-          name="text"
-          id="text"
-          onChange={handleChange}
+          value={itemsFormData.name}
+          name="name"
+          onChange={handleChange2}
         />
         <input
           type="number"
-          placeholder="Add cost"
-          value={itemCost}
+          placeholder="Add a cost"
+          value={itemsFormData.cost}
           name="cost"
-          id="cost"
-          onChange={handleChange}
+          onChange={handleChange2}
         />
         <BsPlusCircle onClick={handleSubmit} />
       </>
