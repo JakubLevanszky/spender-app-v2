@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import ItemsList from '../../../../components/ItemsList/ItemsList';
 import Income from '../../../../components/Income/Income';
 import { Container } from '../Container/Container.styled';
-import Spending from '../../../../components/Spending/Spending';
+import Spendings from '../../../../components/Spendings/Spendings';
 import Balance from '../../../../components/Balance/Balance';
 
 export default function AppWrapper() {
@@ -23,14 +23,12 @@ export default function AppWrapper() {
     localStorage.setItem('items', JSON.stringify(newItems));
   };
 
-  // const balanceUpdate = () => {
-  //   let newBalance = income - items.cost;
-  // };
-
   const balanceUpdate = items.reduce((balance, item) => {
-    console.log('balance:' + balance);
-    console.log('item ' + Number(item.cost));
     return (balance += Number(item.cost));
+  }, 0);
+
+  const spendingsUpdate = items.reduce((spendings, item) => {
+    return (spendings += Number(item.cost));
   }, 0);
 
   // get rid off useEffect and use function instead
@@ -52,7 +50,7 @@ export default function AppWrapper() {
         <Container>
           <Income income={income} onIncomeUpdate={incomeUpdate} />
           <Balance balance={balanceUpdate} income={income} />
-          <Spending />
+          <Spendings spendings={spendingsUpdate} />
           <ItemsList items={items} onItemsUpdate={onItemsUpdate} />
         </Container>
       </AppWrapperStyled>
