@@ -33,7 +33,6 @@ export default function Income(props) {
             <button onClick={handleIncomeSave} type="button">
               Save
             </button>
-            {/* have a function what will be passed to AppWrapper component to calculate / handle budget */}
           </>
         ) : (
           <>

@@ -21,8 +21,6 @@ export default function ItemsList(props) {
       <h1>List</h1>
       <ItemsForm onSubmit={addItem} />
       <Item items={props.items} removeItem={removeItem} />
-      {/* editItem={editItem} completeItem={completeItem} */}
-      {/* <button onClick={handleClick}>test</button> */}
     </>
   );
 }

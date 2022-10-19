@@ -1,21 +1,11 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect, useRef } from 'react';
-
+import React, { useState } from 'react';
 import { BsPlusCircle } from 'react-icons/bs';
-// import { GiConfirmed } from 'react-icons/gi';
 
 export default function ItemsForm(props) {
   const [itemsFormData, setItemsFormData] = useState({ name: '', cost: '' });
 
-  // const inputRef = useRef(null);
-
-  // useEffect(() => {
-  //   inputRef.current.focus();
-  // });
-
-  const handleChange2 = (e) => {
-    const { name, value, type } = e.target;
+  const handleChange = (e) => {
     setItemsFormData((prevFormData) => {
       return {
         ...prevFormData,
@@ -31,54 +21,25 @@ export default function ItemsForm(props) {
     setItemsFormData({ name: '', cost: '' });
   };
 
-  // const handleChange = (e) => {
-  //   setItemName(e.target.value);
-  //   setItemCost(e.target.value);
-  // };
+  // todo add value to the form while press ENTER
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* {props.edit ? (
-        <>
-          <input
-            type="text"
-            placeholder="Update your item"
-            value={itemName}
-            name="text"
-            id="text"
-            onChange={handleChange}
-            ref={inputRef}
-          />
-          <input
-            type="number"
-            placeholder="Update your cost"
-            value={itemCost}
-            name="cost"
-            id="cost"
-            onChange={handleChange}
-            ref={inputRef}
-          />
-          <GiConfirmed onClick={handleSubmit} />
-        </>
-      ) : ( */}
-      <>
-        <input
-          type="text"
-          placeholder="Add an item"
-          value={itemsFormData.name}
-          name="name"
-          onChange={handleChange2}
-        />
-        <input
-          type="number"
-          placeholder="Add a cost"
-          value={itemsFormData.cost}
-          name="cost"
-          onChange={handleChange2}
-        />
-        <BsPlusCircle onClick={handleSubmit} />
-      </>
-      {/* )} */}
+      <input
+        type="text"
+        placeholder="Add an item"
+        value={itemsFormData.name}
+        name="name"
+        onChange={handleChange}
+      />
+      <input
+        type="number"
+        placeholder="Add a cost"
+        value={itemsFormData.cost}
+        name="cost"
+        onChange={handleChange}
+      />
+      <BsPlusCircle onClick={handleSubmit} />
     </form>
   );
 }

@@ -11,7 +11,6 @@ import Balance from '../../../../components/Balance/Balance';
 export default function AppWrapper() {
   const [income, setIncome] = useState(1000);
   const [items, setItems] = useState([]);
-  const [balance, setBalance] = useState(income);
 
   const incomeUpdate = (newIncome) => {
     setIncome(newIncome);
