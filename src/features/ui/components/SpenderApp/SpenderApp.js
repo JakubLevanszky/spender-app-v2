@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { AppWrapperStyled } from './AppWrapper.styled';
+import { SpenderAppStyled } from './SpenderApp.styled';
 import Header from '../Header/Header';
 import ItemsList from '../../../../components/ItemsList/ItemsList';
 import Income from '../../../../components/Income/Income';
@@ -8,7 +8,7 @@ import { Container } from '../Container/Container.styled';
 import Spendings from '../../../../components/Spendings/Spendings';
 import Balance from '../../../../components/Balance/Balance';
 
-export default function AppWrapper() {
+export default function SpenderApp() {
   const [income, setIncome] = useState(1000);
   const [items, setItems] = useState([]);
 
@@ -45,14 +45,14 @@ export default function AppWrapper() {
   return (
     <>
       <Header />
-      <AppWrapperStyled>
+      <SpenderAppStyled>
         <Container>
           <Income income={income} onIncomeUpdate={incomeUpdate} />
           <Balance balance={balanceUpdate} income={income} />
           <Spendings spendings={spendingsUpdate} />
           <ItemsList items={items} onItemsUpdate={onItemsUpdate} />
         </Container>
-      </AppWrapperStyled>
+      </SpenderAppStyled>
     </>
   );
 }

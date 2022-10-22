@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AppWrapperStyled = styled.div`
+export const SpenderAppStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
