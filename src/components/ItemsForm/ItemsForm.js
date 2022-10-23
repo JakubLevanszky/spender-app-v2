@@ -39,7 +39,9 @@ export default function ItemsForm(props) {
         name="cost"
         onChange={handleChange}
       />
-      <BsPlusCircle onClick={handleSubmit} />
+      <button type="submit">
+        <BsPlusCircle onClick={handleSubmit} />
+      </button>
     </form>
   );
 }
