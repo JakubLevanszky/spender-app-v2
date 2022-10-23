@@ -9,8 +9,10 @@ import TotalSpent from '../../../../components/TotalSpent/TotalSpent';
 import RemainingBudget from '../../../../components/RemainingBudget/RemainingBudget';
 
 export default function SpenderApp() {
-  const [income, setIncome] = useState(1000);
-  const [expenses, setExpenses] = useState([]);
+  const [income, setIncome] = useState(() => JSON.parse(localStorage.getItem('income')) ?? [1000]);
+  const [expenses, setExpenses] = useState(
+    () => JSON.parse(localStorage.getItem('expenses')) ?? []
+  );
 
   const incomeUpdate = (newIncome) => {
     setIncome(newIncome);
@@ -29,18 +31,6 @@ export default function SpenderApp() {
   const totalSpentUpdate = expenses.reduce((totalSpent, item) => {
     return (totalSpent += Number(item.cost));
   }, 0);
-
-  // get rid off useEffect and use function instead
-  useEffect(() => {
-    try {
-      const maybeExpenses = JSON.parse(localStorage.getItem('expenses'));
-      const maybeIncome = JSON.parse(localStorage.getItem('income'));
-      if (maybeExpenses) setExpenses(maybeExpenses);
-      if (maybeIncome) setIncome(maybeIncome);
-    } catch (error) {
-      // ignore parsing errors
-    }
-  }, []);
 
   return (
     <>
