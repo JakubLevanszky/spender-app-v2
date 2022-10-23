@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-export default function Balance(props) {
+export default function TotalSpent(props) {
   return (
     <>
-      <h2>Balance: {props.income - props.balance}</h2>
+      <h2>Total spent: {props.totalSpent}</h2>
     </>
   );
 }

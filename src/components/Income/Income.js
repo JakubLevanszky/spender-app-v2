@@ -36,7 +36,7 @@ export default function Income(props) {
           </>
         ) : (
           <>
-            <span>Income: {props.income}</span>
+            <span>Monthly income: {props.income}</span>
             <button onClick={toggleEdit} type="button">
               Edit
             </button>

@@ -2,40 +2,40 @@
 import React, { useEffect, useState } from 'react';
 import { SpenderAppStyled } from './SpenderApp.styled';
 import Header from '../Header/Header';
-import ItemsList from '../../../../components/ItemsList/ItemsList';
+import Expenses from '../../../../components/Expenses/Expenses';
 import Income from '../../../../components/Income/Income';
 import { Container } from '../Container/Container.styled';
-import Spendings from '../../../../components/Spendings/Spendings';
-import Balance from '../../../../components/Balance/Balance';
+import TotalSpent from '../../../../components/TotalSpent/TotalSpent';
+import RemainingBudget from '../../../../components/RemainingBudget/RemainingBudget';
 
 export default function SpenderApp() {
   const [income, setIncome] = useState(1000);
-  const [items, setItems] = useState([]);
+  const [expenses, setExpenses] = useState([]);
 
   const incomeUpdate = (newIncome) => {
     setIncome(newIncome);
     localStorage.setItem('income', JSON.stringify(newIncome));
   };
 
-  const onItemsUpdate = (newItems) => {
-    setItems(newItems);
-    localStorage.setItem('items', JSON.stringify(newItems));
+  const onExpensesUpdate = (newExpenses) => {
+    setExpenses(newExpenses);
+    localStorage.setItem('expenses', JSON.stringify(newExpenses));
   };
 
-  const balanceUpdate = items.reduce((balance, item) => {
-    return (balance += Number(item.cost));
+  const remainingBudgetUpdate = expenses.reduce((remainingBudget, item) => {
+    return (remainingBudget += Number(item.cost));
   }, 0);
 
-  const spendingsUpdate = items.reduce((spendings, item) => {
-    return (spendings += Number(item.cost));
+  const totalSpentUpdate = expenses.reduce((totalSpent, item) => {
+    return (totalSpent += Number(item.cost));
   }, 0);
 
   // get rid off useEffect and use function instead
   useEffect(() => {
     try {
-      const maybeItems = JSON.parse(localStorage.getItem('items'));
+      const maybeExpenses = JSON.parse(localStorage.getItem('expenses'));
       const maybeIncome = JSON.parse(localStorage.getItem('income'));
-      if (maybeItems) setItems(maybeItems);
+      if (maybeExpenses) setExpenses(maybeExpenses);
       if (maybeIncome) setIncome(maybeIncome);
     } catch (error) {
       // ignore parsing errors
@@ -48,9 +48,9 @@ export default function SpenderApp() {
       <SpenderAppStyled>
         <Container>
           <Income income={income} onIncomeUpdate={incomeUpdate} />
-          <Balance balance={balanceUpdate} income={income} />
-          <Spendings spendings={spendingsUpdate} />
-          <ItemsList items={items} onItemsUpdate={onItemsUpdate} />
+          <RemainingBudget remainingBudget={remainingBudgetUpdate} income={income} />
+          <TotalSpent totalSpent={totalSpentUpdate} />
+          <Expenses expenses={expenses} onItemsUpdate={onExpensesUpdate} />
         </Container>
       </SpenderAppStyled>
     </>
