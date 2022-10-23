@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import { BsPlusCircle } from 'react-icons/bs';
 
-export default function ItemsForm(props) {
-  const [itemsFormData, setItemsFormData] = useState({ name: '', cost: '' });
+export default function ExpensesForm(props) {
+  const [expensesFormData, setExpensesFormData] = useState({ name: '', cost: '' });
 
   const handleChange = (e) => {
-    setItemsFormData((prevFormData) => {
+    setExpensesFormData((prevFormData) => {
       return {
         ...prevFormData,
         [e.target.name]: e.target.value,
@@ -17,25 +17,23 @@ export default function ItemsForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.onSubmit(itemsFormData);
-    setItemsFormData({ name: '', cost: '' });
+    props.onSubmit(expensesFormData);
+    setExpensesFormData({ name: '', cost: '' });
   };
-
-  // todo add value to the form while press ENTER
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Add an item"
-        value={itemsFormData.name}
+        placeholder="Add an expense"
+        value={expensesFormData.name}
         name="name"
         onChange={handleChange}
       />
       <input
         type="number"
         placeholder="Add a cost"
-        value={itemsFormData.cost}
+        value={expensesFormData.cost}
         name="cost"
         onChange={handleChange}
       />

@@ -1,13 +1,16 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import ItemsForm from '../ItemsForm/ItemsForm';
+import ExpensesForm from '../ExpensesForm/ExpensesForm';
 import ExpenseItem from '../ExpenseItem/ExpenseItem';
 
 export default function Expenses(props) {
   const addExpense = (expense) => {
-    const expenses = [expense, ...props.expenses];
-
-    props.onItemsUpdate(expenses);
+    if (expense.name === '' || expense.cost === '') {
+      window.alert(`You can't add empty expense.`);
+    } else {
+      const expenses = [expense, ...props.expenses];
+      props.onItemsUpdate(expenses);
+    }
   };
 
   const handleRemoveExpense = (id) => {
@@ -19,7 +22,7 @@ export default function Expenses(props) {
   return (
     <>
       <h1>Expenses</h1>
-      <ItemsForm onSubmit={addExpense} />
+      <ExpensesForm onSubmit={addExpense} />
       <ExpenseItem expenses={props.expenses} onRemoveExpense={handleRemoveExpense} />
     </>
   );
