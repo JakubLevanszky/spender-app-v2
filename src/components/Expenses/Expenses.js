@@ -10,7 +10,7 @@ export default function Expenses(props) {
     props.onItemsUpdate(expenses);
   };
 
-  const removeExpense = (id) => {
+  const handleRemoveExpense = (id) => {
     const removeExpenseItem = [...props.expenses].filter((expense) => expense.id !== id);
 
     props.onItemsUpdate(removeExpenseItem);
@@ -20,7 +20,7 @@ export default function Expenses(props) {
     <>
       <h1>Expenses</h1>
       <ItemsForm onSubmit={addExpense} />
-      <ExpenseItem expenses={props.expenses} removeExpense={removeExpense} />
+      <ExpenseItem expenses={props.expenses} onRemoveExpense={handleRemoveExpense} />
     </>
   );
 }

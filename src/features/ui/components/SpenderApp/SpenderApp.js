@@ -14,12 +14,12 @@ export default function SpenderApp() {
     () => JSON.parse(localStorage.getItem('expenses')) ?? []
   );
 
-  const incomeUpdate = (newIncome) => {
+  const handleIncomeUpdate = (newIncome) => {
     setIncome(newIncome);
     localStorage.setItem('income', JSON.stringify(newIncome));
   };
 
-  const onExpensesUpdate = (newExpenses) => {
+  const handleExpensesUpdate = (newExpenses) => {
     setExpenses(newExpenses);
     localStorage.setItem('expenses', JSON.stringify(newExpenses));
   };
@@ -37,10 +37,10 @@ export default function SpenderApp() {
       <Header />
       <SpenderAppStyled>
         <Container>
-          <Income income={income} onIncomeUpdate={incomeUpdate} />
+          <Income income={income} onIncomeUpdate={handleIncomeUpdate} />
           <RemainingBudget remainingBudget={remainingBudgetUpdate} income={income} />
           <TotalSpent totalSpent={totalSpentUpdate} />
-          <Expenses expenses={expenses} onItemsUpdate={onExpensesUpdate} />
+          <Expenses expenses={expenses} onItemsUpdate={handleExpensesUpdate} />
         </Container>
       </SpenderAppStyled>
     </>

@@ -5,7 +5,7 @@ export default function Income(props) {
   const [editing, setEditing] = useState(false);
   const [editedIncome, setEditedIncome] = useState(props.income);
 
-  const toggleEdit = () => {
+  const handleToggleEdit = () => {
     setEditing(true);
   };
 
@@ -37,7 +37,7 @@ export default function Income(props) {
         ) : (
           <>
             <span>Monthly income: {props.income}</span>
-            <button onClick={toggleEdit} type="button">
+            <button onClick={handleToggleEdit} type="button">
               Edit
             </button>
           </>

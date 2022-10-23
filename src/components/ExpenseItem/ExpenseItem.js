@@ -9,7 +9,7 @@ export default function ExpenseItem(props) {
         {expense.name} {expense.cost}
       </div>
       <div className="icons">
-        <RiCloseCircleLine onClick={() => props.removeExpense(expense.id)} />
+        <RiCloseCircleLine onClick={() => props.onRemoveExpense(expense.id)} />
       </div>
     </div>
   ));
