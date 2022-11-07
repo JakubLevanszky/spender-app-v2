@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
-import { SpenderAppStyled } from './SpenderApp.styled';
+import React, { useState } from 'react';
+import { SpenderAppStyled, SpenderAppWrapper } from './SpenderApp.styled';
 import Header from '../Header/Header';
 import Expenses from '../../../../components/Expenses/Expenses';
 import Income from '../../../../components/Income/Income';
@@ -34,15 +34,17 @@ export default function SpenderApp() {
 
   return (
     <>
-      <Header />
-      <SpenderAppStyled>
-        <Container>
-          <Income income={income} onIncomeUpdate={handleIncomeUpdate} />
-          <RemainingBudget remainingBudget={remainingBudgetUpdate} income={income} />
-          <TotalSpent totalSpent={totalSpentUpdate} />
-          <Expenses expenses={expenses} onItemsUpdate={handleExpensesUpdate} />
-        </Container>
-      </SpenderAppStyled>
+      <SpenderAppWrapper>
+        <Header />
+        <SpenderAppStyled>
+          <Container>
+            <Income income={income} onIncomeUpdate={handleIncomeUpdate} />
+            <RemainingBudget remainingBudget={remainingBudgetUpdate} income={income} />
+            <TotalSpent totalSpent={totalSpentUpdate} />
+            <Expenses expenses={expenses} onItemsUpdate={handleExpensesUpdate} />
+          </Container>
+        </SpenderAppStyled>
+      </SpenderAppWrapper>
     </>
   );
 }

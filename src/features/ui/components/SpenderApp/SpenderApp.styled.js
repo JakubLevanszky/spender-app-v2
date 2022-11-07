@@ -6,6 +6,13 @@ export const SpenderAppStyled = styled.div`
   align-items: center;
   padding: 40px;
   column-gap: 40px;
-  width: 100%;
+  width: 60vw;
   height: 100%;
+  max-width: 828px;
+`;
+
+export const SpenderAppWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

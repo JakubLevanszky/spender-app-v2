@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { BsPlusCircle } from 'react-icons/bs';
+import { GoPlus } from 'react-icons/go';
 
 export default function ExpensesForm(props) {
   const [expensesFormData, setExpensesFormData] = useState({ name: '', cost: '' });
@@ -38,7 +38,7 @@ export default function ExpensesForm(props) {
         onChange={handleChange}
       />
       <button type="submit">
-        <BsPlusCircle onClick={handleSubmit} />
+        <GoPlus onClick={handleSubmit} />
       </button>
     </form>
   );

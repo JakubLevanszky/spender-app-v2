@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { RiCloseCircleLine } from 'react-icons/ri';
+import { RiDeleteBinLine } from 'react-icons/ri';
 
 export default function ExpenseItem(props) {
   return props.expenses.map((expense, i) => (
@@ -9,7 +9,7 @@ export default function ExpenseItem(props) {
         {expense.name} {expense.cost}
       </div>
       <div className="icons">
-        <RiCloseCircleLine onClick={() => props.onRemoveExpense(expense.id)} />
+        <RiDeleteBinLine onClick={() => props.onRemoveExpense(expense.id)} />
       </div>
     </div>
   ));
