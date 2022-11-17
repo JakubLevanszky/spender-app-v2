@@ -16,3 +16,10 @@ export const SpenderAppWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+export const ValuesSection = styled.section`
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 20px;
+`;

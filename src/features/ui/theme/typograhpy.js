@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { mq } from './mq';
 
@@ -16,7 +16,11 @@ export const typography = {
   h2: css`
     font-size: 5.4rem;
     ${mq.medium} {
-      font-size: 2.8rem;
+      font-size: 1.8rem;
     }
   `
 };
+
+export const Title = styled.h2`
+  ${typography.h2}
+`;

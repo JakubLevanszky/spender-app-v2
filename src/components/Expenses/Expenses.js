@@ -2,6 +2,7 @@
 import React from 'react';
 import ExpensesForm from '../ExpensesForm/ExpensesForm';
 import ExpenseItem from '../ExpenseItem/ExpenseItem';
+import { Title } from '../../features/ui/theme/typograhpy';
 
 export default function Expenses(props) {
   const addExpense = (expense) => {
@@ -21,7 +22,7 @@ export default function Expenses(props) {
 
   return (
     <>
-      <h1>Expenses</h1>
+      <Title>Expenses</Title>
       <ExpensesForm onSubmit={addExpense} />
       <ExpenseItem expenses={props.expenses} onRemoveExpense={handleRemoveExpense} />
     </>
