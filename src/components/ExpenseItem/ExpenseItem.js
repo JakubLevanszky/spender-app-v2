@@ -1,16 +1,15 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { RiDeleteBinLine } from 'react-icons/ri';
+import { Cost, ExpansesItemWraper, ItemWrapper, Name, StyledIcon } from './ExpenseItem.styled';
 
 export default function ExpenseItem(props) {
   return props.expenses.map((expense, i) => (
-    <div key={i}>
-      <div key={expense.id}>
-        {expense.name} {expense.cost}
-      </div>
-      <div className="icons">
-        <RiDeleteBinLine onClick={() => props.onRemoveExpense(expense.id)} />
-      </div>
-    </div>
+    <ExpansesItemWraper key={i}>
+      <ItemWrapper key={expense.id}>
+        <Name>{expense.name}</Name>
+        <Cost>{expense.cost}</Cost>
+        <StyledIcon onClick={() => props.onRemoveExpense(expense.id)} />
+      </ItemWrapper>
+    </ExpansesItemWraper>
   ));
 }
