@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { GoPlus } from 'react-icons/go';
+import Input from '../../features/ui/components/Input/Input';
+import { ExpFormStyled } from './ExpensesForm.styled';
 
 export default function ExpensesForm(props) {
   const [expensesFormData, setExpensesFormData] = useState({ name: '', cost: '' });
@@ -22,15 +24,15 @@ export default function ExpensesForm(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <ExpFormStyled onSubmit={handleSubmit}>
+      <Input
         type="text"
         placeholder="Add an expense"
         value={expensesFormData.name}
         name="name"
         onChange={handleChange}
       />
-      <input
+      <Input
         type="number"
         placeholder="Add a cost"
         value={expensesFormData.cost}
@@ -40,6 +42,6 @@ export default function ExpensesForm(props) {
       <button type="submit">
         <GoPlus onClick={handleSubmit} />
       </button>
-    </form>
+    </ExpFormStyled>
   );
 }
