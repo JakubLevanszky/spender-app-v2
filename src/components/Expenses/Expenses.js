@@ -2,8 +2,7 @@
 import React from 'react';
 import ExpensesForm from '../ExpensesForm/ExpensesForm';
 import ExpenseItem from '../ExpenseItem/ExpenseItem';
-import { Title } from '../../features/ui/theme/typograhpy';
-import { ExpansesWraper } from './Expenses.styled';
+import { ExpansesWraper, TitleExpanses } from './Expenses.styled';
 
 export default function Expenses(props) {
   const addExpense = (expense) => {
@@ -23,7 +22,7 @@ export default function Expenses(props) {
 
   return (
     <ExpansesWraper>
-      <Title>Expenses</Title>
+      <TitleExpanses>Expenses</TitleExpanses>
       <ExpensesForm onSubmit={addExpense} />
       <ExpenseItem expenses={props.expenses} onRemoveExpense={handleRemoveExpense} />
     </ExpansesWraper>
