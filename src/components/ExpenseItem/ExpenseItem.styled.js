@@ -17,14 +17,20 @@ export const ItemWrapper = styled.div`
   display: inherit;
   flex-grow: inherit;
   align-items: center;
+  &:hover {
+    background-color: ${palette.grey};
+    border-radius: 15px;
+  }
 `;
 
 export const Name = styled.span`
   flex-grow: 1;
+  margin-left: 8px;
 `;
 
 export const Cost = styled.span`
   padding-right: 8px;
+  font-weight: 700;
 `;
 
 export const StyledIcon = styled(RiDeleteBinLine)`
@@ -32,7 +38,12 @@ export const StyledIcon = styled(RiDeleteBinLine)`
   height: 28px;
   width: 28px;
   padding: 5px;
+  margin-right: 8px;
   border-radius: 15px;
-  background: ${palette.grey};
+  background-color: ${palette.grey};
   cursor: pointer;
+  &:hover {
+    color: ${palette.grey};
+    background-color: ${palette.berry};
+  }
 `;

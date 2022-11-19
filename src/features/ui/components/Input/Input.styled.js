@@ -9,4 +9,20 @@ export const StyledInput = styled.input`
   outline: none;
   font: inherit;
   padding: 8px;
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &:hover {
+    background-color: ${palette.greyish};
+    color: ${palette.grey};
+    ::placeholder,
+    ::-webkit-input-placeholder {
+      color: ${palette.grey};
+    }
+  }
+  &:focus {
+    border: 1px solid ${palette.greyish};
+  }
 `;

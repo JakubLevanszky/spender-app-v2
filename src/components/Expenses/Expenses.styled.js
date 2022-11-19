@@ -6,4 +6,6 @@ export const ExpansesWraper = styled.section`
   align-items: center;
   overflow: auto;
   max-height: fit-content;
+  scrollbar-gutter: stable both-edges;
+  padding-bottom: 10px;
 `;
