@@ -5,4 +5,5 @@ export const ExpFormStyled = styled.form`
   flex-direction: row;
   gap: 8px;
   justify-content: center;
+  align-items: center;
 `;

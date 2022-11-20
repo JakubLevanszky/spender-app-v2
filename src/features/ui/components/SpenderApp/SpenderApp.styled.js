@@ -22,4 +22,5 @@ export const ValuesSection = styled.section`
   flex-direction: row;
   gap: 15px;
   padding: 20px;
+  align-items: center;
 `;

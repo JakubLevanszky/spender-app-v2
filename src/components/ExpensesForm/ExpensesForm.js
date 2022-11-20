@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { GoPlus } from 'react-icons/go';
+import Button from '../../features/ui/components/Button/Button';
 import Input from '../../features/ui/components/Input/Input';
 import { ExpFormStyled } from './ExpensesForm.styled';
 
@@ -39,9 +40,9 @@ export default function ExpensesForm(props) {
         name="cost"
         onChange={handleChange}
       />
-      <button type="submit">
+      <Button small type="submit">
         <GoPlus onClick={handleSubmit} />
-      </button>
+      </Button>
     </ExpFormStyled>
   );
 }

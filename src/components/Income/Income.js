@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import Button from '../../features/ui/components/Button/Button';
 import Input from '../../features/ui/components/Input/Input';
 import { ValueSpan } from '../../features/ui/components/ValueSpan/ValueSpan.styled';
 import { Title } from '../../features/ui/theme/typograhpy';
@@ -31,17 +32,16 @@ export default function Income(props) {
       {editing ? (
         <>
           <Input type="number" defaultValue={editedIncome} onChange={handleIncomeChange} />
-          {/* <input type="number" defaultValue={editedIncome} onChange={handleIncomeChange} /> */}
-          <button onClick={handleIncomeSave} type="button">
+          <Button medium onClick={handleIncomeSave} type="button">
             Save
-          </button>
+          </Button>
         </>
       ) : (
         <>
           <Title>Monthly income:</Title> <ValueSpan>{props.income}</ValueSpan>
-          <button onClick={handleToggleEdit} type="button">
+          <Button medium onClick={handleToggleEdit} type="button">
             Edit
-          </button>
+          </Button>
         </>
       )}
     </>
