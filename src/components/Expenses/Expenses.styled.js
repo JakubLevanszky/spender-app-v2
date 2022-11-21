@@ -8,7 +8,7 @@ export const ExpansesWraper = styled.section`
   overflow: auto;
   max-height: fit-content;
   scrollbar-gutter: stable both-edges;
-  padding-bottom: 10px;
+  padding: 10px 0;
 `;
 
 export const TitleExpanses = styled(Title)`

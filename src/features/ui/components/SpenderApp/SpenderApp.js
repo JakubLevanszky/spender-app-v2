@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { SpenderAppStyled, SpenderAppWrapper, ValuesSection } from './SpenderApp.styled';
+import { Hr, SpenderAppStyled, SpenderAppWrapper, ValuesSection } from './SpenderApp.styled';
 import Header from '../Header/Header';
 import Expenses from '../../../../components/Expenses/Expenses';
 import Income from '../../../../components/Income/Income';
@@ -43,6 +43,7 @@ export default function SpenderApp() {
               <RemainingBudget remainingBudget={remainingBudgetUpdate} income={income} />
               <TotalSpent totalSpent={totalSpentUpdate} />
             </ValuesSection>
+            <Hr />
             <Expenses expenses={expenses} onItemsUpdate={handleExpensesUpdate} />
           </Container>
         </SpenderAppStyled>

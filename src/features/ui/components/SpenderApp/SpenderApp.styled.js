@@ -23,4 +23,12 @@ export const ValuesSection = styled.section`
   gap: 15px;
   padding: 20px;
   align-items: center;
+  justify-content: space-evenly;
+`;
+
+export const Hr = styled.hr`
+  width: 100%;
+  border: none;
+  margin: 1.5rem auto;
+  box-shadow: 0 0 10px 1px black;
 `;

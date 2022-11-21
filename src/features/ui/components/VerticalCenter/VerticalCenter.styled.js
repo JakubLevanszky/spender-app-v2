@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const IncomeWrapper = styled.div`
+export const VerticalCenter = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 8px;
 `;

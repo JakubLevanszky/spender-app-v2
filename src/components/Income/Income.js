@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import Button from '../../features/ui/components/Button/Button';
 import Input from '../../features/ui/components/Input/Input';
 import { ValueSpan } from '../../features/ui/components/ValueSpan/ValueSpan.styled';
+import { VerticalCenter } from '../../features/ui/components/VerticalCenter/VerticalCenter.styled';
 import { Title } from '../../features/ui/theme/typograhpy';
+import { IncomeWrapper } from './Income.styled';
 
 export default function Income(props) {
   const [editing, setEditing] = useState(false);
@@ -28,22 +30,23 @@ export default function Income(props) {
   };
 
   return (
-    <>
+    <VerticalCenter>
+      <Title>Monthly income</Title>
       {editing ? (
-        <>
+        <IncomeWrapper>
           <Input type="number" defaultValue={editedIncome} onChange={handleIncomeChange} />
           <Button medium onClick={handleIncomeSave} type="button">
             Save
           </Button>
-        </>
+        </IncomeWrapper>
       ) : (
-        <>
-          <Title>Monthly income:</Title> <ValueSpan>{props.income}</ValueSpan>
+        <IncomeWrapper>
+          <ValueSpan>{props.income}</ValueSpan>
           <Button medium onClick={handleToggleEdit} type="button">
             Edit
           </Button>
-        </>
+        </IncomeWrapper>
       )}
-    </>
+    </VerticalCenter>
   );
 }
