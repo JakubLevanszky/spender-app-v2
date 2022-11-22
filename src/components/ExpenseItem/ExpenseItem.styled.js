@@ -18,7 +18,7 @@ export const ItemWrapper = styled.div`
   flex-grow: inherit;
   align-items: center;
   &:hover {
-    background-color: ${palette.grey};
+    background-color: ${palette.magnolia};
     border-radius: 15px;
   }
 `;
@@ -40,7 +40,7 @@ export const StyledIcon = styled(RiDeleteBinLine)`
   padding: 5px;
   margin-right: 8px;
   border-radius: 15px;
-  background-color: ${palette.grey};
+  background-color: ${palette.magnolia};
   cursor: pointer;
   &:hover {
     color: ${palette.grey};

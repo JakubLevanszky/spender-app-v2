@@ -3,14 +3,15 @@ import styled, { css } from 'styled-components';
 import { mq } from './mq';
 
 export const font = {
-  base: '"Inter", sans-serif'
+  base: '"Inter", sans-serif',
+  heading: '"Alexandria", sans-serif'
 };
 
 export const typography = {
   h1: css`
-    font-size: 6rem;
+    font: 700 6.5rem ${font.heading};
     ${mq.medium} {
-      font-size: 4.5rem;
+      font-size: 5.5rem;
     }
   `,
   h2: css`
@@ -21,6 +22,6 @@ export const typography = {
   `
 };
 
-export const Title = styled.h2`
+export const SubTitle = styled.h2`
   ${typography.h2}
 `;

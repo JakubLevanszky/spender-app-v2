@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { palette } from '../../theme/palette';
 import { typography } from '../../theme/typograhpy';
 
 export const StyledHeader = styled.header`
@@ -13,4 +14,5 @@ export const StyledHeader = styled.header`
 
 export const Heading = styled.h1`
   ${typography.h1}
+  color: ${palette.smokyWhite}
 `;

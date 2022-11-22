@@ -6,7 +6,7 @@ export const ButtonStyled = styled.button`
   border: none;
   border-radius: 4px;
   color: ${palette.white};
-  background-color: ${palette.smokyBlack};
+  background-color: ${palette.persianGreen};
   ${(props) =>
     props.small &&
     css`

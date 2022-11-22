@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Title } from '../../features/ui/theme/typograhpy';
+import { SubTitle } from '../../features/ui/theme/typograhpy';
 
 export const ExpansesWraper = styled.section`
   display: flex;
@@ -11,6 +11,6 @@ export const ExpansesWraper = styled.section`
   padding: 10px 0;
 `;
 
-export const TitleExpanses = styled(Title)`
+export const TitleExpanses = styled(SubTitle)`
   padding-bottom: 16px;
 `;

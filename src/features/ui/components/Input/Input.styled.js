@@ -4,7 +4,7 @@ import { palette } from '../../theme/palette';
 export const StyledInput = styled.input`
   border-radius: 12px;
   height: 30px;
-  background-color: ${palette.grey};
+  background-color: ${palette.magnolia};
   border: none;
   outline: none;
   font: inherit;
@@ -15,14 +15,14 @@ export const StyledInput = styled.input`
     margin: 0;
   }
   &:hover {
-    background-color: ${palette.greyish};
-    color: ${palette.grey};
+    background-color: ${palette.berry};
+    color: ${palette.magnolia};
     ::placeholder,
     ::-webkit-input-placeholder {
-      color: ${palette.grey};
+      color: ${palette.magnolia};
     }
   }
   &:focus {
-    border: 1px solid ${palette.greyish};
+    border: 1px solid ${palette.berry};
   }
 `;

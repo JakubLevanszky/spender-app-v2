@@ -1,15 +1,13 @@
 export const palette = {
-  background: '#C3B1BAff',
-  cat1: '#06A0F6',
-  cat2: '#24CA49',
-  cat3: '#FF8743',
-
-  // generic
   white: '#FFF',
   black: '#000',
   smokyBlack: '#0E0C0Dff',
-  berry: '#835580ff',
+  smokyWhite: '#f7f9fa',
+  berry: '#835580',
   grey: '#EDEFF2',
   greyish: '#46424Aff',
-  orangeYellow: '#F9BC56ff'
+  orangeYellow: '#F9BC56',
+  persianGreen: '#1B998B',
+  magnolia: '#F8F1FF',
+  red: '#E3170A'
 };

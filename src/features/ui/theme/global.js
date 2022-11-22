@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 html, body {
   padding: 0;
   height: 100%;
-  background-color: ${palette.background};
+  background-color: ${palette.berry};
 }
 
 html {
@@ -19,6 +19,7 @@ html {
 }
 
 body {
-  font: 400 1.6rem ${font.base}
+  font: 400 1.6rem ${font.base};
+  color: ${palette.smokyBlack};
 }
 `;

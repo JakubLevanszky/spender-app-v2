@@ -4,7 +4,7 @@ import Button from '../../features/ui/components/Button/Button';
 import Input from '../../features/ui/components/Input/Input';
 import { ValueSpan } from '../../features/ui/components/ValueSpan/ValueSpan.styled';
 import { VerticalCenter } from '../../features/ui/components/VerticalCenter/VerticalCenter.styled';
-import { Title } from '../../features/ui/theme/typograhpy';
+import { SubTitle } from '../../features/ui/theme/typograhpy';
 import { IncomeWrapper } from './Income.styled';
 
 export default function Income(props) {
@@ -31,7 +31,7 @@ export default function Income(props) {
 
   return (
     <VerticalCenter>
-      <Title>Monthly income</Title>
+      <SubTitle>Monthly income</SubTitle>
       {editing ? (
         <IncomeWrapper>
           <Input type="number" defaultValue={editedIncome} onChange={handleIncomeChange} />
