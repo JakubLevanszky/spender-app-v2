@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { palette } from '../../theme/palette';
 
 export const SpenderAppStyled = styled.div`
   display: flex;
@@ -30,5 +31,5 @@ export const Hr = styled.hr`
   width: 100%;
   border: none;
   margin: 1.5rem auto;
-  box-shadow: 0 0 10px 1px black;
+  box-shadow: 0 0 10px 1px ${palette.berry};
 `;
