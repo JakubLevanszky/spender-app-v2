@@ -7,6 +7,10 @@ export const ButtonStyled = styled.button`
   border-radius: 4px;
   color: ${palette.white};
   background-color: ${palette.persianGreen};
+  cursor: pointer;
+  &:hover {
+    background-color: ${palette.darkerPersianGreen};
+  }
   ${(props) =>
     props.small &&
     css`

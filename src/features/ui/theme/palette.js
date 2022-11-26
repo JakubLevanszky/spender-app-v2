@@ -8,6 +8,7 @@ export const palette = {
   greyish: '#46424Aff',
   orangeYellow: '#F9BC56',
   persianGreen: '#1B998B',
+  darkerPersianGreen: '#0F574E',
   magnolia: '#F8F1FF',
   red: '#E3170A'
 };

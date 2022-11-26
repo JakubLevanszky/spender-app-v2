@@ -5,4 +5,5 @@ export const VerticalCenter = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  width: calc(100% / 3);
 `;
