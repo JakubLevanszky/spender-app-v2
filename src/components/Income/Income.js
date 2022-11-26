@@ -34,7 +34,7 @@ export default function Income(props) {
       <SubTitle>Monthly income</SubTitle>
       {editing ? (
         <IncomeWrapper>
-          <Input type="number" defaultValue={editedIncome} onChange={handleIncomeChange} />
+          <Input small type="number" defaultValue={editedIncome} onChange={handleIncomeChange} />
           <Button medium onClick={handleIncomeSave} type="button">
             Save
           </Button>

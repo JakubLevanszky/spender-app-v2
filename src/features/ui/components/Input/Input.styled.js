@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { palette } from '../../theme/palette';
 
 export const StyledInput = styled.input`
@@ -25,4 +25,9 @@ export const StyledInput = styled.input`
   &:focus {
     border: 1px solid ${palette.berry};
   }
+  ${(props) =>
+    props.small &&
+    css`
+      width: 100px;
+    `}
 `;
