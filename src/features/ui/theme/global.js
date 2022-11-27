@@ -15,7 +15,7 @@ html, body {
 }
 
 html {
-  font-size: 62.5%; // 16 px = 1.6 rem | cons = if there is some library imported which uses etc 1 rem as a unit that will cause a problem and in whole application
+  font-size: 62.5%; // 16 px = 1.6 rem | cons = if there is some library imported which uses etc 1 rem as a unit that will cause a problem in whole application
 }
 
 body {

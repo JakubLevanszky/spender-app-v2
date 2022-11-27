@@ -5,6 +5,6 @@ export const ScreenSize = {
 
 export const mq = {
   smallOnly: `@media (max-width: ${ScreenSize.medium / 16}em)`,
-  medium: `@media (min-width: ${ScreenSize.medium / 16}em)`,
-  large: `@media (min-width: ${ScreenSize.large / 16}em)`
+  medium: `@media (max-width: ${ScreenSize.medium / 16}em)`,
+  large: `@media (max-width: ${ScreenSize.large / 16}em)`
 };

@@ -6,4 +6,5 @@ export const VerticalCenter = styled.div`
   align-items: center;
   gap: 8px;
   width: calc(100% / 3);
+  text-align: center;
 `;

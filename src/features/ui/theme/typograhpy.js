@@ -9,13 +9,13 @@ export const font = {
 
 export const typography = {
   h1: css`
-    font: 700 6.5rem ${font.heading};
+    font: 700 5.5rem ${font.heading};
     ${mq.medium} {
       font-size: 5.5rem;
     }
   `,
   h2: css`
-    font-size: 5.4rem;
+    font-size: 1.8rem;
     ${mq.medium} {
       font-size: 1.8rem;
     }

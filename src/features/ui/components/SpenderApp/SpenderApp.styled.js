@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { palette } from '../../theme/palette';
+import { mq } from '../../theme/mq';
 
 export const SpenderAppStyled = styled.div`
   display: flex;
@@ -10,6 +11,12 @@ export const SpenderAppStyled = styled.div`
   width: 60vw;
   height: 100%;
   max-width: 828px;
+  ${mq.medium} {
+    width: 90vw;
+  }
+  ${mq.large} {
+    width: 80vw;
+  }
 `;
 
 export const SpenderAppWrapper = styled.div`
