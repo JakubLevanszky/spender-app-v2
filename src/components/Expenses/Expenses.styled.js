@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { SubTitle } from '../../features/ui/theme/typograhpy';
+import { mq } from '../../features/ui/theme/mq';
 
 export const ExpansesWraper = styled.section`
   display: flex;
@@ -9,6 +10,9 @@ export const ExpansesWraper = styled.section`
   max-height: fit-content;
   scrollbar-gutter: stable both-edges;
   padding: 10px 0;
+  ${mq.mobile} {
+    width: 90vw;
+  }
 `;
 
 export const TitleExpanses = styled(SubTitle)`

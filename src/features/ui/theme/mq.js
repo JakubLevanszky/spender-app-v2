@@ -1,10 +1,11 @@
 export const ScreenSize = {
+  mobile: 480,
   medium: 768,
   large: 1200
 };
 
 export const mq = {
-  smallOnly: `@media (max-width: ${ScreenSize.medium / 16}em)`,
-  medium: `@media (max-width: ${ScreenSize.medium / 16}em)`,
-  large: `@media (max-width: ${ScreenSize.large / 16}em)`
+  mobile: `@media (max-width: ${ScreenSize.mobile}px)`,
+  medium: `@media (max-width: ${ScreenSize.medium}px)`,
+  large: `@media (max-width: ${ScreenSize.large}px)`
 };

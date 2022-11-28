@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { palette } from '../../features/ui/theme/palette';
+import { mq } from '../../features/ui/theme/mq';
 
 export const ExpansesItemWraper = styled.div`
   display: flex;
@@ -10,6 +11,9 @@ export const ExpansesItemWraper = styled.div`
   flex-grow: 1;
   width: 420px;
   padding: 8px 5px 0px;
+  ${mq.mobile} {
+    width: inherit;
+  }
 `;
 
 export const ItemWrapper = styled.div`
