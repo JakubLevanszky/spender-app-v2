@@ -26,7 +26,7 @@ export default function SpenderApp() {
         .catch((err) => {
           setDateState(err);
         });
-    }, 1000);
+    }, 5000);
     return () => clearInterval(id);
   }, []);
 
