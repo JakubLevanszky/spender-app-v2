@@ -10,6 +10,7 @@ export const StyledHeader = styled.header`
   justify-content: center;
   height: 70px;
   width: 100%;
+  margin: 10px 0;
 `;
 
 export const Heading = styled.h1`

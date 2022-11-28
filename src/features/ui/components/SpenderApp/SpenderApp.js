@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Hr, SpenderAppStyled, SpenderAppWrapper, ValuesSection } from './SpenderApp.styled';
 import Header from '../Header/Header';
 import Expenses from '../../../../components/Expenses/Expenses';
@@ -7,12 +7,30 @@ import Income from '../../../../components/Income/Income';
 import { Container } from '../Container/Container.styled';
 import TotalSpent from '../../../../components/TotalSpent/TotalSpent';
 import RemainingBudget from '../../../../components/RemainingBudget/RemainingBudget';
+import DateTime from '../DateTime/DateTime';
 
 export default function SpenderApp() {
   const [income, setIncome] = useState(() => JSON.parse(localStorage.getItem('income')) ?? [1000]);
   const [expenses, setExpenses] = useState(
     () => JSON.parse(localStorage.getItem('expenses')) ?? []
   );
+
+  const [dateState, setDateState] = useState([]);
+  useEffect(() => {
+    const id = setInterval(function () {
+      fetch('http://worldtimeapi.org/api/ip')
+        .then((response) => response.json())
+        .then((data) => {
+          setDateState(data);
+        })
+        .catch((err) => {
+          setDateState(err);
+        });
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  if (dateState === undefined) return 'Date and time loading failed.';
 
   const handleIncomeUpdate = (newIncome) => {
     setIncome(newIncome);
@@ -36,6 +54,7 @@ export default function SpenderApp() {
     <>
       <SpenderAppWrapper>
         <Header />
+        <DateTime date={dateState} />
         <SpenderAppStyled>
           <Container>
             <ValuesSection>

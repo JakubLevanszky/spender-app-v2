@@ -6,7 +6,7 @@ export const SpenderAppStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 30px 15px;
   column-gap: 40px;
   width: 60vw;
   height: 100%;
