@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { palette } from './palette';
-import { font } from './typograhpy';
+import { font } from './typography';
 
 export const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {

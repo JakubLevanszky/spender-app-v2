@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SubTitle } from '../../features/ui/theme/typograhpy';
+import { SubTitle } from '../../features/ui/theme/typography';
 import { mq } from '../../features/ui/theme/mq';
 
 export const ExpansesWraper = styled.section`

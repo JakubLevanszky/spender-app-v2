@@ -4,7 +4,7 @@ import Button from '../../features/ui/components/Button/Button';
 import Input from '../../features/ui/components/Input/Input';
 import { ValueSpan } from '../../features/ui/components/ValueSpan/ValueSpan.styled';
 import { VerticalCenter } from '../../features/ui/components/VerticalCenter/VerticalCenter.styled';
-import { SubTitle } from '../../features/ui/theme/typograhpy';
+import { SubTitle } from '../../features/ui/theme/typography';
 import { IncomeWrapper } from './Income.styled';
 
 export default function Income(props) {

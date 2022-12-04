@@ -18,7 +18,7 @@ export default function SpenderApp() {
   const [dateState, setDateState] = useState([]);
   useEffect(() => {
     const id = setInterval(function () {
-      fetch('http://worldtimeapi.org/api/ip')
+      fetch('https://worldtimeapi.org/api/ip')
         .then((response) => response.json())
         .then((data) => {
           setDateState(data);
